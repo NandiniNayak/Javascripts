@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title> Day 3 Challenge </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <select id = "listOfCountries"></select>
+
+    <script>
+      $.getJSON("countries.json",
+        function(data)
+        {
+          console.debug(data);
+          for(var index in data.countries)
+          {
+              console.log(data.countries);
+              $("#listOfCountries").append($("<option>", { value:data.countries[index], text: data.countries[index] }));
+          }
+        }
+      )
+    </script>
+  </body>
+</html>
